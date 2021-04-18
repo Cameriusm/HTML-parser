@@ -10,6 +10,7 @@ import ForgotPassword from './ForgotPassword';
 import UpdateProfile from './UpdateProfile';
 import NavBar from './NavBar';
 import '../App.css';
+
 function App() {
   return (
     <div>
