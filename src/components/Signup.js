@@ -32,7 +32,7 @@ export default function Signup() {
   return (
     <>
       <Card>
-        <h2 className="text-center mb-4">Sign Up</h2>
+        <h2 className="text-center mb-4 form-title">Sign Up</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
