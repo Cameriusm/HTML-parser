@@ -10,6 +10,7 @@ import UpdateProfile from './UpdateProfile';
 import NavBar from './NavBar';
 import '../App.css';
 import Dashboard from './Dashboard';
+import Parser from './Parser';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <NavBar />
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />
+            <PrivateRoute exact path="/parser-category" component={Parser} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
             <Route path="/signup" component={Signup} />

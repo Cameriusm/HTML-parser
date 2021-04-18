@@ -1,7 +1,7 @@
 .navbars {
   background-color: #007bff;
   width: 100%;
-  height: 75px;
+  height: 10vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -24,4 +24,69 @@ Form {
 }
 .hint {
   margin-top: 15px;
+}
+
+.parsing-background {
+  background-color: rgb(253, 250, 250);
+  border: 1px solid black;
+  width: 75%;
+  margin: 5vh auto 5vh auto;
+  height: 70vh;
+  box-shadow: 0.5px 0.5px 1px 1px;
+}
+.parsing-photo {
+  background-color: rgb(223, 207, 207);
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.parsing-photo img {
+  margin: 50px;
+  width: 150px;
+  height: 150px;
+}
+.parsing-details {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  background-color: #f7fdff;
+  width: 85%;
+  height: 40vh;
+  margin: 5vh auto 5vh auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0.5px 0.5px 1px 1px;
+}
+.parsing-description {
+  background-color: rgb(255, 255, 255);
+  padding: 35px;
+}
+/* .parsing-description p { */
+/* padding-top: 5px; */
+/* } */
+
+.parsing-bottom {
+  width: 80%;
+  margin: 5vh auto 5vh auto;
+  margin-top: 10vh;
+
+  /* display: flex;
+  align-items: center; */
+  /* justify-self: center; */
+}
+/* .parsing-bottom div { */
+/* width: 50%; */
+/* } */
+.parsing-button {
+  width: 150px;
+  /* position: relative; */
+  margin: 0 auto;
+}
+/* .parsing-credentials p {
+} */
+.parsing-details-text {
+  clear: both;
+}
+.parsing-credentials {
+  margin-top: 10px;
+  font-size: 11px;
 }
