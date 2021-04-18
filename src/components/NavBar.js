@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function NavBar(props) {
   const { currentUser } = useAuth();
@@ -20,8 +18,11 @@ export default function NavBar(props) {
         </div>
       ) : (
         <div className="navButtons">
-          <Link to="/">
+          <Link to="/profile">
             <button className="btn btn-success float-right">Профиль</button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-success float-right">Парсинг</button>
           </Link>
         </div>
       )}
