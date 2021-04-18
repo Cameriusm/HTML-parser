@@ -22,19 +22,19 @@ export default function Dashboard() {
   return (
     <>
       <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4 form-title">Profile</h2>
+        <Card.Body className="w-50 m-auto">
+          <h2 className="text-center mb-4 form-title">Профиль</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email: </strong>
           {currentUser.email}
           <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update profile
+            Обновить профиль
           </Link>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-3">
         <Button variant="link" onClick={handleLogout}>
-          Log Out
+          Выйти
         </Button>
       </div>
     </>

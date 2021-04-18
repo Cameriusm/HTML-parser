@@ -29,7 +29,7 @@ export default function ForgotPassword() {
   return (
     <>
       <Card>
-        <h2 className="text-center mb-4 form-title">Password Reset</h2>
+        <h2 className="text-center mb-4 form-title">Восстановление пароля</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
         {message && <Alert variant="success">{message}</Alert>}
@@ -40,15 +40,15 @@ export default function ForgotPassword() {
           </Form.Group>
 
           <Button disabled={loading} className="w-100" type="submit">
-            Reset Password
+            Отправить
           </Button>
         </Form>
         <div className="w-100 text-center mt-3">
-          <Link to="/login">Login</Link>
+          <Link to="/login">Назад</Link>
         </div>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="w-100 text-center mt-3 hint">
+        Нету аккаунта? <Link to="/signup">Создать</Link>
       </div>
     </>
   );

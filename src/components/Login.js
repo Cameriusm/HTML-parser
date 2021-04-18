@@ -28,7 +28,7 @@ export default function Login() {
   return (
     <>
       <Card>
-        <h2 className="text-center mb-4 form-title">Log In</h2>
+        <h2 className="text-center mb-4 form-title">Вход</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -37,20 +37,20 @@ export default function Login() {
             <Form.Control type="email" ref={emailRef} required />
           </Form.Group>
           <Form.Group id="password">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Пароль</Form.Label>
             <Form.Control type="password" ref={passwordRef} required />
           </Form.Group>
 
           <Button disabled={loading} className="w-100" type="submit">
-            Log In
+            Подтвердить
           </Button>
         </Form>
         <div className="w-100 text-center mt-3">
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forgot-password">Забыли пароль?</Link>
         </div>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="w-100 text-center mt-2 hint">
+        Нету аккаунта? <Link to="/signup">Создать</Link>
       </div>
     </>
   );

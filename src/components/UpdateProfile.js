@@ -42,7 +42,7 @@ export default function UpdateProfile() {
   return (
     <>
       <Card>
-        <h2 className="text-center mb-4">Update profile</h2>
+        <h2 className="text-center mb-4 form-title">Обновить профиль</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
@@ -56,28 +56,28 @@ export default function UpdateProfile() {
             />
           </Form.Group>
           <Form.Group id="password">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Пароль</Form.Label>
             <Form.Control
               type="password"
               ref={passwordRef}
-              placeholder="Leave blank to keep the same"
+              placeholder="Можно оставить без изменений"
             />
           </Form.Group>
           <Form.Group id="password-confirm">
-            <Form.Label>Password Confirmation</Form.Label>
+            <Form.Label>Подтверждение пароля</Form.Label>
             <Form.Control
               type="password"
               ref={passwordConfirmRef}
-              placeholder="Leave blank to keep the same"
+              placeholder="Можно оставить без изменений"
             />
           </Form.Group>
           <Button disabled={loading} className="w-100" type="submit">
-            Update
+            Обновить
           </Button>
         </Form>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/login">Cancel</Link>
+        <Link to="/">Назад</Link>
       </div>
     </>
   );
