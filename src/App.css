@@ -90,3 +90,36 @@ Form {
   margin-top: 10px;
   font-size: 11px;
 }
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.checkbox-list {
+  height: auto;
+}
+.checkbox-category {
+  display: flex;
+  /* justify-content: center; */
+}
+.checkbox-list label {
+  margin-left: 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.checkbox-list input {
+  margin: 0 10px 0 5px;
+}
+.checkbox-list h2 {
+  margin: 10px;
+  text-align: center;
+}
+.checkbox-list-column {
+  margin-right: 100px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.checkbox-category-background {
+  height: auto;
+}
