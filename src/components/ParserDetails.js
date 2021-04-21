@@ -10,7 +10,7 @@ export default function Parser(props) {
   useEffect(() => {
     console.log(props.location.state.categories);
     axios
-      .post('http://localhost:3001/api/post', {
+      .post('https://parserss.herokuapp.com/api/post', {
         categories: props.location.state.categories,
       })
       .then((result) => {
