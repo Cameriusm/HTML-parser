@@ -31,13 +31,17 @@ export default function Parser() {
       });
     }
     setLoading(false);
-    console.log(boxes);
+    // console.log(boxes);
   };
   return (
     <div className="parsing-background checkbox-category-background">
       <div className="parsing-details checkbox-list">
         <h2>Выберите категории для парсинга:</h2>
-        {error && <Alert variant="danger">{error}</Alert>}
+        {error && (
+          <Alert variant="danger" className="text-center">
+            {error}
+          </Alert>
+        )}
         <div className="checkbox-category">
           <div className="checkbox-list-column">
             <label>

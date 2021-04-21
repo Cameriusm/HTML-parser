@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar(props) {
   const { currentUser } = useAuth();
-  console.log(currentUser);
+  // console.log(currentUser);
   return (
     <div className="navbars">
       {!currentUser ? (

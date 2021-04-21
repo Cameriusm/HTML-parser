@@ -19,13 +19,13 @@ export default function Dashboard() {
             индустрии производства и продажи современной женской одежды оптом.
             Мы предоставляем своим покупательницам выбор того, как они хотят
             выглядеть, предлагая коллекции самых разных направлений и стилей.
-            <div className="parsing-credentials float-right">
-              <p>
-                Email: info@emkafashion.ru <br />
-                Сайт: www.emkafashion.ru
-              </p>
-            </div>
           </p>
+          <div className="parsing-credentials float-right">
+            <p>
+              Email: info@emkafashion.ru <br />
+              Сайт: www.emkafashion.ru
+            </p>
+          </div>
         </div>
       </div>
       <div className="parsing-bottom">

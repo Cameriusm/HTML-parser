@@ -11,6 +11,7 @@ import NavBar from './NavBar';
 import '../App.css';
 import Dashboard from './Dashboard';
 import Parser from './Parser';
+import ParserDetails from './ParserDetails';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <PrivateRoute exact path="/parser-category" component={Parser} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <PrivateRoute path="/parsing-details" component={ParserDetails} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/forgot-password" component={ForgotPassword} />

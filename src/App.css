@@ -31,10 +31,12 @@ Form {
   border: 1px solid black;
   width: 75%;
   margin: 5vh auto 5vh auto;
-  height: 70vh;
+  height: auto;
   box-shadow: 0.5px 0.5px 1px 1px;
 }
 .parsing-photo {
+  display: flex;
+  margin: auto;
   background-color: rgb(223, 207, 207);
   vertical-align: middle;
   width: 100%;
@@ -50,7 +52,7 @@ Form {
     'Lucida Sans', Arial, sans-serif;
   background-color: #f7fdff;
   width: 85%;
-  height: 40vh;
+  height: auto;
   margin: 5vh auto 5vh auto;
   display: flex;
   justify-content: center;
@@ -58,7 +60,7 @@ Form {
 }
 .parsing-description {
   background-color: rgb(255, 255, 255);
-  padding: 35px;
+  padding: 35px 35px 0px 35px;
 }
 /* .parsing-description p { */
 /* padding-top: 5px; */
@@ -87,7 +89,7 @@ Form {
   clear: both;
 }
 .parsing-credentials {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-size: 11px;
 }
 .checkbox-list {
@@ -100,7 +102,7 @@ Form {
 }
 .checkbox-category {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 .checkbox-list label {
   margin-left: 25px;
@@ -115,9 +117,10 @@ Form {
   text-align: center;
 }
 .checkbox-list-column {
-  margin-right: 100px;
+  margin-right: 50px;
   margin-left: 20px;
   display: flex;
+
   flex-direction: column;
 }
 .checkbox-category-background {
