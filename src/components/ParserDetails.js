@@ -35,8 +35,8 @@ export default function Parser(props) {
                 <img src={val.img} alt="" />
                 <h1>{val.name}</h1>
                 <p>{val.description}</p>
-
-                <button>Delete</button>
+                <p>{val.descList}</p>
+                <button>Удалить</button>
               </div>
             );
           })}
