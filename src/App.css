@@ -126,3 +126,39 @@ Form {
 .checkbox-category-background {
   height: auto;
 }
+.loadingImage {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.card {
+  padding: 15px;
+  display: flex;
+}
+.card-details {
+  display: flex;
+  margin: 5px;
+}
+.card-details img {
+  margin-right: 25px;
+  width: 125px;
+  height: 175px;
+}
+.card button {
+  margin: 0 50px 0 auto;
+  width: 150px;
+}
+.card-desc {
+  width: 400px;
+  margin-right: 10px;
+}
+.card-descList {
+  width: 250px;
+}
+.additionalInput input {
+  width: 500px;
+}
+.additionalInput {
+  margin: 0 auto;
+  width: 500px;
+}

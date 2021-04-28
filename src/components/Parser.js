@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 export default function Parser() {
   const [boxes, setBoxes] = useState([]);
   const [error, setError] = useState('');
+  const [additionalInput, setAdditionaInput] = useState('');
 
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -22,17 +23,23 @@ export default function Parser() {
     e.preventDefault();
     setLoading(true);
     setError('');
-    if (boxes.length === 0) {
+    if ((boxes.length || additionalInput) === 0) {
       setError('Вы не выбрали ни одной категории!');
     } else {
       history.push({
         pathname: '/parsing-details',
-        state: { categories: boxes },
+        state: { categories: boxes, additional: additionalInput },
       });
     }
     setLoading(false);
     // console.log(boxes);
   };
+
+  const changeInput = (e) => {
+    e.preventDefault();
+    setAdditionaInput(e.target.value);
+  };
+
   return (
     <div className="parsing-background checkbox-category-background">
       <div className="parsing-details checkbox-list">
@@ -168,6 +175,12 @@ export default function Parser() {
             </label>
           </div>
         </div>
+      </div>
+      <div className="additionalInput">
+        <input
+          placeholder="Вы можете вставить отдельную ссылку для парсинга"
+          onChange={(e) => changeInput(e)}
+        ></input>
       </div>
       <div className="parsing-bottom">
         <div className="parsing-button ">
