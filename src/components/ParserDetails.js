@@ -3,6 +3,10 @@ import { Alert } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import loading from './loading.gif';
+import * as FileSaver from 'file-saver';
+import * as XLSX from 'xlsx';
+import { CSVLink } from 'react-csv';
+import ExportCSV from './ExportCSV';
 
 export default function Parser(props) {
   console.log(props);
@@ -29,10 +33,6 @@ export default function Parser(props) {
         console.log(result.data);
       });
   }, []);
-
-  const handleExcel = () => {
-    console.log(props);
-  };
 
   const deleteItem = (e) => {
     e.preventDefault();
@@ -71,7 +71,13 @@ export default function Parser(props) {
                     ))}
                   </p>
                 </div>
-                <button name={val.articul} onClick={(e) => deleteItem(e)}>
+                <button
+                  name={val.articul}
+                  onClick={(e) => {
+                    if (window.confirm('Подтвердите действие удаления'))
+                      deleteItem(e);
+                  }}
+                >
                   Удалить
                 </button>
               </div>
@@ -81,14 +87,16 @@ export default function Parser(props) {
       </div>
       <div className="parsing-bottom">
         <div className="parsing-button ">
-          <button
-            onClick={() => {
-              handleExcel();
-            }}
+          <ExportCSV
+            csvData={['this.state.customers']}
+            fileName={'Спарсенная информация'}
+          />
+          {/* <button
+            onClick={(e) => exportToCSV(csvData, fileName)}
             className="btn btn-success"
           >
             Скачать в формате Excel
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
