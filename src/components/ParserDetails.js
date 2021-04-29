@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Alert } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+
 import axios from 'axios';
 import loading from './loading.gif';
-import * as FileSaver from 'file-saver';
-import * as XLSX from 'xlsx';
-import { CSVLink } from 'react-csv';
+
 import ExportCSV from './ExportCSV';
 
 export default function Parser(props) {
@@ -15,7 +12,7 @@ export default function Parser(props) {
   useEffect(() => {
     console.log(props.location.state.categories);
     axios
-      .post('http://localhost:3001/api/post', {
+      .post('https://parserss.herokuapp.com/api/post', {
         categories: props.location.state.categories,
         additional: props.location.state.additional,
       })
