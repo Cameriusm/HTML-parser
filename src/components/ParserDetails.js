@@ -6,11 +6,11 @@ import loading from './loading.gif';
 import ExportCSV from './ExportCSV';
 
 export default function Parser(props) {
-  console.log(props);
+  // console.log(props);
   const [parser, setParser] = useState([]);
   const [loadingScreen, setLoadingScreen] = useState(false);
   useEffect(() => {
-    console.log(props.location.state.categories);
+    // console.log(props.location.state.categories);
     axios
       .post('https://parserss.herokuapp.com/api/post', {
         categories: props.location.state.categories,
@@ -21,21 +21,44 @@ export default function Parser(props) {
         const results = [].concat.apply([], result.data);
         console.log(results);
         setParser(results);
-        console.log(result.data);
+        // console.log(result.data);
       })
       .catch((result) => {
         setLoadingScreen(true);
         const results = ['Попытка парсинга была неудачна'];
         setParser(results);
-        console.log(result.data);
+        // console.log(result.data);
       });
   }, []);
 
   const deleteItem = (e) => {
     e.preventDefault();
-    console.log(e.target.name);
+    // console.log(e.target.name);
     setParser(parser.filter((val) => e.target.name !== val.articul));
   };
+
+  const tables = [];
+  for (let i = 0; i < parser.length; i++) {
+    const tableDetails = {
+      Название: `${parser[i].name}`,
+      'URL фотографии': `https://www.emkafashion.ru/${parser[i].img}`,
+      Артикул: `${parser[i].articul}`,
+      Описание: `${parser[i].description}`,
+      Категория: `${parser[i].category}`,
+    };
+
+    parser[i].descList.forEach((elem) => {
+      const descListElem = elem.split(':');
+      tableDetails[descListElem[0]] = descListElem[1];
+    });
+    // tableDetails[]
+    tables.push(
+      tableDetails
+
+      // 'Краткая характеристика': `${parser[i].descList.map((elem) => elem.trim().replace(/\s\s+/g, ' '))}`,
+      // parser[i].descList.map((elem) => elem.trim().replace(/\s\s+/g, ' '))
+    );
+  }
 
   return (
     <div className="parsing-background checkbox-category-background">
@@ -85,7 +108,9 @@ export default function Parser(props) {
       <div className="parsing-bottom">
         <div className="parsing-button ">
           <ExportCSV
-            csvData={['this.state.customers']}
+            // ['jh', parser.map((item) => ['Nazvanie', item.articul])]
+            // csvData={[parser.map((item) => item.articul)]} working
+            csvData={tables}
             fileName={'Спарсенная информация'}
           />
           {/* <button
